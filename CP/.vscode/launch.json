@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/vsahare/Desktop/Vishal/Personal/Vishal/Padhai/DSA/TLE-Eliminator/CP",
+      "program": "/Users/vsahare/Desktop/Vishal/Personal/Vishal/Padhai/DSA/TLE-Eliminator/CP/build/Debug/outDebug"
+    }
+  ]
+}
