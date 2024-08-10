@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++: g++ -std=c++20 build and debug active file",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "osx": {
+        "MIMode": "lldb"
+      },
+      "miDebuggerPath": "/usr/local/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignore-failure": true
+        }
+      ],
+      "visualizerFile": "${workspaceFolder}/my.natvis",
+      "showDisplayString": true
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/vishal/Desktop/Vishal/TLE-Eliminator",
+      "program": "/Users/vishal/Desktop/Vishal/TLE-Eliminator/build/Debug/outDebug"
+    }
+  ]
+}
