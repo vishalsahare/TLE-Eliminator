@@ -2,33 +2,24 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "g++: Build and debug active file",
-      "type": "cppdbg",
+      "name": "(lldb) Launch",
+      "type": "lldb",
       "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+      "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
+      "cwd": "${fileDirname}",
+      "environment": [],
       "externalConsole": false,
-      "MIMode": "gdb",
-      "miDebuggerPath": "/usr/local/bin/gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignore-failure": true
-        }
-      ],
-      "visualizerFile": "${workspaceFolder}/my.natvis",
-      "showDisplayString": true,
-      "preLaunchTask": "C/C++: g++ build active file"
+      "MIMode": "lldb"
     },
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/vishal/Desktop/Vishal/TLE-Eliminator",
-      "program": "/Users/vishal/Desktop/Vishal/TLE-Eliminator/build/Debug/outDebug"
+      "cwd": "/Users/vsahare/Desktop/Vishal/Personal/Vishal/Padhai/TLE-Eliminator",
+      "program": "/Users/vsahare/Desktop/Vishal/Personal/Vishal/Padhai/TLE-Eliminator/build/Debug/outDebug"
     }
   ]
 }
