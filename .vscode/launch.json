@@ -1,25 +1,47 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "(lldb) Launch",
-      "type": "lldb",
-      "request": "launch",
-      "program": "${workspaceFolder}/${fileBasenameNoExtension}",
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${fileDirname}",
-      "environment": [],
-      "externalConsole": false,
-      "MIMode": "lldb"
-    },
-    {
-      "name": "C/C++ Runner: Debug Session",
-      "type": "lldb",
-      "request": "launch",
-      "args": [],
-      "cwd": "/Users/vsahare/Desktop/Vishal/Personal/Vishal/Padhai/TLE-Eliminator",
-      "program": "/Users/vsahare/Desktop/Vishal/Personal/Vishal/Padhai/TLE-Eliminator/build/Debug/outDebug"
-    }
-  ]
-}
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "g++: Build and run",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/${fileBasenameNoExtension}",
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "/usr/local/bin/gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignore-failure": true
+          }
+        ],
+        "visualizerFile": "${workspaceFolder}/my.natvis",
+        "showDisplayString": true,
+        "preLaunchTask": "compile and run"
+      },
+      {
+        "name": "g++: Build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/${fileBasenameNoExtension} < input.txt > output.txt",
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "/usr/local/bin/gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignore-failure": true
+          }
+        ],
+        "visualizerFile": "${workspaceFolder}/my.natvis",
+        "showDisplayString": true,
+        "preLaunchTask": "compile"
+      }
+    ]
+  }
