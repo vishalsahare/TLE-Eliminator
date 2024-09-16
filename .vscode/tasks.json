@@ -2,26 +2,42 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "compile",
-            "type": "shell",
+            "type": "cppbuild",
+            "label": "C/C++: g++ BUILD & DEBUG active file",
             "command": "/usr/bin/g++",
             "args": [
-                "-g",
+                "-fdiagnostics-color=always",
+                "-g3",
+                "-Wall",
                 "-std=c++17",
+                "${file}",
                 "-o",
-                "${fileBasenameNoExtension}",
-                "${file}"
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+
+            "detail": "compiler: /usr/bin/g++"
+        },
+        {
+            "type": "shell",
+            "label": "Run C++ Program: g++",
+            "command": "/usr/bin/g++ -g3 -Wall -std=c++17 ${file} -o ${fileDirname}/${fileBasenameNoExtension} && ${fileDirname}/${fileBasenameNoExtension}",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
             ],
             "group": {
                 "kind": "build",
-                "isDefault": false
-            }
-        },
-        {
-            "label": "compile and run",
-            "type": "shell",
-            "command": "/usr/bin/g++ -g -std=c++17 -o ${fileBasenameNoExtension} ${file} && ./${fileBasenameNoExtension} < input.txt > output.txt",
-            "group": "build"
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/g++"
         }
     ]
 }

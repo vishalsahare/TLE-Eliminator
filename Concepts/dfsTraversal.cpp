@@ -15,10 +15,10 @@ const int INF = LONG_MAX > 1;
 //------------
 
 void dfs(int node, int parent, vector<vector<int>>& adj) {
-    cout << node << endl;
-    for (auto v : adj[node]) {
-        if (node != parent) {
-            dfs(v, node, adj);
+    cout << node << " ";
+    for (auto child : adj[node]) {
+        if (child != parent) {
+            dfs(child, node, adj);
         }
     }
 }
@@ -27,10 +27,11 @@ void solve() {
     int n;
     cin >> n;
     vector<vector<int>> adj(n + 1);
-    for (int i = 0; i < n; i++) {
+
+    for (int i = 1; i < n; i++) {
         int u, v;
         cin >> u >> v;
-
+        // cout << u << " " << v << endl;
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
